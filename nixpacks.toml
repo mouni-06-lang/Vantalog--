@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["jdk21"]
+
+[phases.build]
+cmds = ["cd spring-backend && chmod +x ./gradlew && ./gradlew clean bootJar -x test"]
+
+[start]
+cmd = "java -jar spring-backend/build/libs/*.jar"
